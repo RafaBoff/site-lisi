@@ -37,28 +37,41 @@
   const hamburger  = document.getElementById('nav-hamburger');
   const mobileMenu = document.getElementById('nav-mobile');
 
-  function toggleMobileMenu() {
+  function openMobileMenu() {
     if (!hamburger || !mobileMenu) return;
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    hamburger.classList.add('open');
+    mobileMenu.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
   }
 
   function closeMobileMenu() {
     if (!hamburger || !mobileMenu) return;
     hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+  }
+
+  function toggleMobileMenu() {
+    mobileMenu && mobileMenu.classList.contains('open')
+      ? closeMobileMenu()
+      : openMobileMenu();
   }
 
   if (hamburger) hamburger.addEventListener('click', toggleMobileMenu);
 
-  // Fechar menu ao clicar em um link
+  // Fechar ao clicar em um link do menu mobile
   if (mobileMenu) {
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeMobileMenu);
     });
   }
+
+  // Fechar ao pressionar Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
 
   /* ─── REVEAL ON SCROLL ─── */
   const revealObserver = new IntersectionObserver(
