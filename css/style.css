@@ -1580,8 +1580,38 @@ footer {
   .pillars-grid { grid-template-columns: 1fr; }
   .pricing-card { padding: 36px 28px; }
   .guarantee-inner { padding: 40px 24px; }
-  .hero-actions { flex-direction: column; gap: 12px; }
-  .testimonials-track { padding: 0 24px 20px; }
-
   .portfolio-item { width: 260px; height: 340px; }
+
+  /* ── CARROSSEL PÓDIO — MOBILE ── */
+  .podium-carousel {
+    gap: 8px;
+  }
+
+  /* No mobile, esconde os cards laterais — só o central visível */
+  .podium-card.is-side {
+    display: none;
+  }
+
+  /* Card ativo ocupa toda a largura disponível */
+  .podium-card.is-active {
+    flex: 1;
+    max-width: 100%;
+    transform: none; /* sem elevação no mobile */
+  }
+
+  .podium-stage {
+    min-height: auto;
+    gap: 0;
+  }
+
+  /* Setas menores no mobile */
+  .podium-arrow {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  /* Mid-CTA mobile */
+  .mid-cta { padding: 48px 0; }
+  .mid-cta-text { font-size: 1.3rem; }
 }
