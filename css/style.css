@@ -953,7 +953,7 @@ section { padding: 120px 0; }
    ============================================================ */
 #testimonials {
   background: var(--dark);
-  overflow: hidden;
+  overflow-x: hidden; /* evita scroll horizontal sem cortar verticalmente */
 }
 
 .testimonials-header {
@@ -975,11 +975,11 @@ section { padding: 120px 0; }
 .podium-stage {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: stretch;   /* todos com mesma altura */
   justify-content: center;
-  gap: 20px;
-  overflow: hidden;
-  min-height: 380px;
+  gap: 16px;
+  overflow: visible;      /* não trunca os cards laterais */
+  min-height: 340px;
   position: relative;
 }
 
@@ -988,36 +988,38 @@ section { padding: 120px 0; }
   background: var(--dark-2);
   border: 1px solid rgba(201, 169, 110, 0.08);
   border-radius: var(--radius);
-  padding: 36px;
-  flex-shrink: 0;
+  padding: 32px 28px;
+  flex: 1;               /* distribui o espaço igualmente */
+  max-width: 340px;      /* mas não cresce demais */
+  min-width: 0;          /* permite encolher no flex */
   transition:
-    transform    0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity      0.5s ease,
-    scale        0.5s ease,
-    filter       0.5s ease,
+    transform    0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity      0.45s ease,
     border-color 0.3s;
   cursor: default;
   position: relative;
-  width: 340px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Card ATIVO (centro / destaque) */
 .podium-card.is-active {
   border-color: rgba(201, 169, 110, 0.3);
-  transform: translateY(-8px) scale(1.0);
+  transform: translateY(-10px);
   opacity: 1;
-  filter: none;
   z-index: 2;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 40px rgba(201,169,110,0.06);
+  box-shadow: 0 28px 60px rgba(0,0,0,0.5), 0 0 40px rgba(201,169,110,0.07);
+  flex: 1.2; /* destaque ocupa um pouco mais de espaço */
 }
 
-/* Cards LATERAIS (prev / next) */
+/* Cards LATERAIS — visiveis e legíveis */
 .podium-card.is-side {
-  opacity: 0.45;
-  filter: blur(0.5px);
-  transform: scale(0.88);
+  opacity: 0.65;
+  filter: none;           /* sem blur para poder ler */
+  transform: translateY(0px);
   z-index: 1;
   pointer-events: none;
+  border-color: rgba(201, 169, 110, 0.04);
 }
 
 /* Ocultos (fila de espera) */
@@ -1046,7 +1048,8 @@ section { padding: 120px 0; }
 }
 
 .podium-card.is-side blockquote {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
 }
 
 /* Autor */

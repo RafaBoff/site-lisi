@@ -172,15 +172,32 @@
     });
 
     function renderCards() {
-      const prev = (current - 1 + total) % total;
-      const next = (current + 1) % total;
+      const prevIdx = (current - 1 + total) % total;
+      const nextIdx = (current + 1) % total;
 
-      cards.forEach((card, i) => {
+      /* Esconde todos primeiro */
+      cards.forEach(card => {
         card.classList.remove('is-active', 'is-side', 'is-hidden');
-        if      (i === current) card.classList.add('is-active');
-        else if (i === prev || i === next) card.classList.add('is-side');
-        else    card.classList.add('is-hidden');
+        card.classList.add('is-hidden');
       });
+
+      /* Posiciona e exibe os 3 visíveis na ordem correta */
+      const stage = document.querySelector('.podium-stage');
+      if (stage) {
+        // Coloca na ordem: [prev][active][next]
+        stage.appendChild(cards[prevIdx]);
+        stage.appendChild(cards[current]);
+        stage.appendChild(cards[nextIdx]);
+      }
+
+      cards[prevIdx].classList.remove('is-hidden');
+      cards[prevIdx].classList.add('is-side');
+
+      cards[current].classList.remove('is-hidden');
+      cards[current].classList.add('is-active');
+
+      cards[nextIdx].classList.remove('is-hidden');
+      cards[nextIdx].classList.add('is-side');
 
       /* Atualiza dots */
       dotsWrap.querySelectorAll('.podium-dot').forEach((dot, i) => {
