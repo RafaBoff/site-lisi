@@ -804,6 +804,34 @@ section { padding: 120px 0; }
 }
 
 /* ============================================================
+   CTA PÓS-CONTEÚDO (.mid-cta)
+   ============================================================ */
+.mid-cta {
+  background: var(--dark-2);
+  border-top: 1px solid rgba(201, 169, 110, 0.08);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+  padding: 64px 0;
+}
+
+.mid-cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+}
+
+.mid-cta-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-style: italic;
+  color: var(--white);
+  font-weight: 300;
+  max-width: 560px;
+  line-height: 1.4;
+}
+
+/* ============================================================
    PORTFÓLIO (#portfolio)
    ============================================================ */
 #portfolio {
