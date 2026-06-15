@@ -149,26 +149,76 @@
     });
   });
 
-  /* ─── DEPOIMENTOS — DOTS NAV ─── */
-  const track = document.querySelector('.testimonials-track');
-  const dots  = document.querySelectorAll('.t-dot');
+  /* ─── CARROSSEL PÓDIO — DEPOIMENTOS ─── */
+  (function () {
+    const cards    = Array.from(document.querySelectorAll('.podium-card'));
+    const dotsWrap = document.getElementById('podium-dots');
+    const btnPrev  = document.getElementById('podium-prev');
+    const btnNext  = document.getElementById('podium-next');
+    const total    = cards.length;
+    let   current  = 0;
+    let   autoTimer;
 
-  function updateDots() {
-    if (!track || !dots.length) return;
-    const cardWidth = 364; // 340px card + 24px gap
-    const index     = Math.round(track.scrollLeft / cardWidth);
-    dots.forEach((d, i) => d.classList.toggle('active', i === index));
-  }
+    if (!total || !dotsWrap) return;
 
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      if (!track) return;
-      const cardWidth = 364;
-      track.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
+    /* Cria os dots dinamicamente */
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className    = 'podium-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Depoimento ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
     });
-  });
 
-  if (track) track.addEventListener('scroll', updateDots, { passive: true });
+    function renderCards() {
+      const prev = (current - 1 + total) % total;
+      const next = (current + 1) % total;
+
+      cards.forEach((card, i) => {
+        card.classList.remove('is-active', 'is-side', 'is-hidden');
+        if      (i === current) card.classList.add('is-active');
+        else if (i === prev || i === next) card.classList.add('is-side');
+        else    card.classList.add('is-hidden');
+      });
+
+      /* Atualiza dots */
+      dotsWrap.querySelectorAll('.podium-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === current);
+      });
+    }
+
+    function goTo(index) {
+      current = (index + total) % total;
+      renderCards();
+      resetAuto();
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    if (btnNext) btnNext.addEventListener('click', next);
+    if (btnPrev) btnPrev.addEventListener('click', prev);
+
+    /* Autoplay a cada 5s */
+    function startAuto() { autoTimer = setInterval(next, 5000); }
+    function resetAuto()  { clearInterval(autoTimer); startAuto(); }
+
+    /* Swipe touch */
+    let touchStartX = 0;
+    const stage = document.querySelector('.podium-stage');
+    if (stage) {
+      stage.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+      stage.addEventListener('touchend',   e => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) dx < 0 ? next() : prev();
+      }, { passive: true });
+    }
+
+    /* Init */
+    renderCards();
+    startAuto();
+  })();
 
   /* ─── SMOOTH SCROLL ─── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {

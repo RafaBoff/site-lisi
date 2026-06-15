@@ -99,9 +99,13 @@
       <a href="#what"    class="btn-ghost"   id="hero-learn">Conhecer o curso</a>
     </div>
   </div>
-  <div class="hero-scroll" aria-hidden="true">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
+  <div class="hero-scroll" aria-label="Role a página para ver mais">
+    <span class="hero-scroll-text">Role</span>
+    <div class="hero-scroll-arrow" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
   </div>
 </section>
 
@@ -373,14 +377,12 @@
     <div class="portfolio-track">
       <div class="portfolio-item"><img src="images/fotos01.webp" alt="Fotografia de casamento por Lisi Viezzer" loading="lazy"></div>
       <div class="portfolio-item"><img src="images/fotos02.webp" alt="Ensaio de casal por Lisi Viezzer" loading="lazy"></div>
-      <div class="portfolio-item"><img src="images/caxias.webp"  alt="Casamento em Caxias do Sul por Lisi Viezzer" loading="lazy"></div>
       <div class="portfolio-item"><img src="images/fotos03.webp" alt="Fotografia de cerimônia por Lisi Viezzer" loading="lazy"></div>
       <div class="portfolio-item"><img src="images/fotos04.webp" alt="Detalhe de casamento por Lisi Viezzer" loading="lazy"></div>
       <div class="portfolio-item"><img src="images/fotos05.webp" alt="Momento espontâneo por Lisi Viezzer" loading="lazy"></div>
       <!-- Duplicado para loop contínuo -->
       <div class="portfolio-item" aria-hidden="true"><img src="images/fotos01.webp" alt="" loading="lazy"></div>
       <div class="portfolio-item" aria-hidden="true"><img src="images/fotos02.webp" alt="" loading="lazy"></div>
-      <div class="portfolio-item" aria-hidden="true"><img src="images/caxias.webp"  alt="" loading="lazy"></div>
       <div class="portfolio-item" aria-hidden="true"><img src="images/fotos03.webp" alt="" loading="lazy"></div>
       <div class="portfolio-item" aria-hidden="true"><img src="images/fotos04.webp" alt="" loading="lazy"></div>
       <div class="portfolio-item" aria-hidden="true"><img src="images/fotos05.webp" alt="" loading="lazy"></div>
@@ -397,7 +399,7 @@
           <img src="images/lisi.webp" alt="Lisi Viezzer, fotógrafa" loading="lazy" width="400" height="600">
         </div>
         <div class="about-img-accent">
-          <img src="images/curso.webp" alt="Lisi Viezzer fotografando" loading="lazy" width="200" height="200">
+          <img src="images/caxias.webp" alt="Casamento fotografado por Lisi Viezzer em Caxias do Sul" loading="lazy" width="220" height="220">
         </div>
       </div>
       <div class="about-text reveal reveal-delay-1">
@@ -431,70 +433,74 @@
       <h2 class="section-title">O que dizem<br><em>quem já passou por aqui</em></h2>
       <div class="section-line" aria-hidden="true"></div>
     </div>
-  </div>
-  <div class="testimonials-track" role="list">
-    <article class="testimonial-card" role="listitem">
-      <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
-      <blockquote class="testimonial-text">"O curso da Lisi transformou completamente a forma como vejo e produzo minhas fotos. Antes eu copiava outros fotógrafos, hoje eu tenho meu próprio estilo."</blockquote>
-      <div class="testimonial-author">
-        <div class="author-avatar" aria-hidden="true">M</div>
-        <div>
-          <div class="author-name">Marina Souza</div>
-          <div class="author-sub">Fotógrafa de casamentos — SP</div>
-        </div>
-      </div>
-    </article>
-    <article class="testimonial-card" role="listitem">
-      <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
-      <blockquote class="testimonial-text">"Em 3 meses após o curso eu já consegui fechar 8 casamentos com o dobro do meu antigo ticket. A parte de precificação e identidade visual mudou meu negócio."</blockquote>
-      <div class="testimonial-author">
-        <div class="author-avatar" aria-hidden="true">C</div>
-        <div>
-          <div class="author-name">Camila Reichert</div>
-          <div class="author-sub">Fotógrafa — RS</div>
-        </div>
-      </div>
-    </article>
-    <article class="testimonial-card" role="listitem">
-      <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
-      <blockquote class="testimonial-text">"A Lisi explica com uma clareza que eu nunca tinha encontrado em outros cursos. Aprendi mais em 2 semanas do que em 2 anos assistindo vídeos aleatórios no YouTube."</blockquote>
-      <div class="testimonial-author">
-        <div class="author-avatar" aria-hidden="true">J</div>
-        <div>
-          <div class="author-name">Juliana Kirst</div>
-          <div class="author-sub">Fotógrafa — SC</div>
-        </div>
-      </div>
-    </article>
-    <article class="testimonial-card" role="listitem">
-      <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
-      <blockquote class="testimonial-text">"O módulo de direção de casais me deu um repertório incrível. Meus clientes agora saem dos ensaios dizendo que se sentiram completamente à vontade — e as fotos mostram isso."</blockquote>
-      <div class="testimonial-author">
-        <div class="author-avatar" aria-hidden="true">F</div>
-        <div>
-          <div class="author-name">Fernanda Paz</div>
-          <div class="author-sub">Fotógrafa — PR</div>
-        </div>
-      </div>
-    </article>
-    <article class="testimonial-card" role="listitem">
-      <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
-      <blockquote class="testimonial-text">"Nunca imaginei que a Lisi me responderia pessoalmente minhas dúvidas. A proximidade dela com os alunos é rara. Vale muito mais do que o investimento."</blockquote>
-      <div class="testimonial-author">
-        <div class="author-avatar" aria-hidden="true">A</div>
-        <div>
-          <div class="author-name">Amanda Flores</div>
-          <div class="author-sub">Fotógrafa — MG</div>
-        </div>
-      </div>
-    </article>
-  </div>
-  <div class="testimonials-nav" role="tablist" aria-label="Navegar pelos depoimentos">
-    <button class="t-dot active" role="tab" aria-label="Depoimento 1"></button>
-    <button class="t-dot"        role="tab" aria-label="Depoimento 2"></button>
-    <button class="t-dot"        role="tab" aria-label="Depoimento 3"></button>
-    <button class="t-dot"        role="tab" aria-label="Depoimento 4"></button>
-    <button class="t-dot"        role="tab" aria-label="Depoimento 5"></button>
+
+    <div class="podium-carousel" role="region" aria-label="Carrossel de depoimentos">
+
+      <!-- Seta esquerda -->
+      <button class="podium-arrow podium-prev" id="podium-prev" aria-label="Depoimento anterior">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+
+      <!-- Trilho de cards -->
+      <div class="podium-stage" aria-live="polite">
+
+        <article class="podium-card" data-index="0">
+          <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote>"O curso da Lisi transformou completamente a forma como vejo e produzo minhas fotos. Antes eu copiava outros fotógrafos, hoje eu tenho meu próprio estilo."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div><div class="author-name">Marina Souza</div><div class="author-sub">Fotógrafa de casamentos — SP</div></div>
+          </div>
+        </article>
+
+        <article class="podium-card" data-index="1">
+          <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote>"Em 3 meses após o curso eu já consegui fechar 8 casamentos com o dobro do meu antigo ticket. A parte de precificação e identidade visual mudou meu negócio."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">C</div>
+            <div><div class="author-name">Camila Reichert</div><div class="author-sub">Fotógrafa — RS</div></div>
+          </div>
+        </article>
+
+        <article class="podium-card" data-index="2">
+          <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote>"A Lisi explica com uma clareza que eu nunca tinha encontrado em outros cursos. Aprendi mais em 2 semanas do que em 2 anos assistindo vídeos aleatórios no YouTube."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">J</div>
+            <div><div class="author-name">Juliana Kirst</div><div class="author-sub">Fotógrafa — SC</div></div>
+          </div>
+        </article>
+
+        <article class="podium-card" data-index="3">
+          <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote>"O módulo de direção de casais me deu um repertório incrível. Meus clientes agora saem dos ensaios dizendo que se sentiram completamente à vontade — e as fotos mostram isso."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">F</div>
+            <div><div class="author-name">Fernanda Paz</div><div class="author-sub">Fotógrafa — PR</div></div>
+          </div>
+        </article>
+
+        <article class="podium-card" data-index="4">
+          <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote>"Nunca imaginei que a Lisi me responderia pessoalmente minhas dúvidas. A proximidade dela com os alunos é rara. Vale muito mais do que o investimento."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div><div class="author-name">Amanda Flores</div><div class="author-sub">Fotógrafa — MG</div></div>
+          </div>
+        </article>
+
+      </div><!-- /podium-stage -->
+
+      <!-- Seta direita -->
+      <button class="podium-arrow podium-next" id="podium-next" aria-label="Próximo depoimento">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+    </div><!-- /podium-carousel -->
+
+    <!-- Indicadores -->
+    <div class="podium-dots" role="tablist" aria-label="Navegar pelos depoimentos" id="podium-dots"></div>
+
   </div>
 </section>
 

@@ -357,23 +357,39 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   opacity: 0;
   animation: fadeUp 0.8s ease 1.4s forwards;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.hero-scroll span {
-  font-size: 0.6rem;
-  letter-spacing: 0.3em;
+.hero-scroll-text {
+  font-size: 0.55rem;
+  letter-spacing: 0.45em;
   text-transform: uppercase;
   color: var(--text-dim);
 }
 
-.scroll-line {
-  width: 1px;
-  height: 60px;
-  background: linear-gradient(to bottom, var(--gold), transparent);
-  animation: scrollPulse 2s ease infinite;
+.hero-scroll-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero-scroll-arrow svg {
+  color: var(--gold);
+  opacity: 0.7;
+  animation: scrollBounce 1.6s ease-in-out infinite;
+}
+
+.hero-scroll-arrow svg:nth-child(2) { animation-delay: 0.2s; opacity: 0.4; }
+.hero-scroll-arrow svg:nth-child(3) { animation-delay: 0.4s; opacity: 0.2; }
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0);   opacity: 0.7; }
+  50%       { transform: translateY(6px); opacity: 1;   }
 }
 
 /* ============================================================
@@ -933,9 +949,12 @@ section { padding: 120px 0; }
 }
 
 /* ============================================================
-   DEPOIMENTOS (#testimonials)
+   DEPOIMENTOS (#testimonials) — CARoussel PÓDIO
    ============================================================ */
-#testimonials { background: var(--dark); }
+#testimonials {
+  background: var(--dark);
+  overflow: hidden;
+}
 
 .testimonials-header {
   text-align: center;
@@ -943,30 +962,70 @@ section { padding: 120px 0; }
   margin: 0 auto 60px;
 }
 
-.testimonials-track {
+/* Wrapper do carrossel */
+.podium-carousel {
   display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  padding-bottom: 20px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  position: relative;
 }
 
-.testimonials-track::-webkit-scrollbar { display: none; }
+/* Palco dos cards */
+.podium-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+  min-height: 380px;
+  position: relative;
+}
 
-.testimonial-card {
-  min-width: 340px;
-  max-width: 340px;
+/* Card base */
+.podium-card {
   background: var(--dark-2);
   border: 1px solid rgba(201, 169, 110, 0.08);
-  padding: 36px;
   border-radius: var(--radius);
+  padding: 36px;
+  flex-shrink: 0;
+  transition:
+    transform    0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity      0.5s ease,
+    scale        0.5s ease,
+    filter       0.5s ease,
+    border-color 0.3s;
+  cursor: default;
   position: relative;
-  transition: border-color 0.3s;
+  width: 340px;
 }
 
-.testimonial-card:hover { border-color: rgba(201, 169, 110, 0.2); }
+/* Card ATIVO (centro / destaque) */
+.podium-card.is-active {
+  border-color: rgba(201, 169, 110, 0.3);
+  transform: translateY(-8px) scale(1.0);
+  opacity: 1;
+  filter: none;
+  z-index: 2;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 40px rgba(201,169,110,0.06);
+}
 
+/* Cards LATERAIS (prev / next) */
+.podium-card.is-side {
+  opacity: 0.45;
+  filter: blur(0.5px);
+  transform: scale(0.88);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ocultos (fila de espera) */
+.podium-card.is-hidden {
+  display: none;
+}
+
+/* Estrelas */
 .testimonial-stars {
   color: var(--gold);
   font-size: 0.8rem;
@@ -974,15 +1033,23 @@ section { padding: 120px 0; }
   margin-bottom: 20px;
 }
 
-.testimonial-text {
+/* Texto do depoimento */
+.podium-card blockquote {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-style: italic;
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 24px;
+  border: none;
+  padding: 0;
 }
 
+.podium-card.is-side blockquote {
+  font-size: 0.95rem;
+}
+
+/* Autor */
 .testimonial-author {
   display: flex;
   align-items: center;
@@ -1012,24 +1079,53 @@ section { padding: 120px 0; }
 
 .author-sub { font-size: 0.72rem; color: var(--text-dim); }
 
-.testimonials-nav {
+/* Setas de navegação */
+.podium-arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  background: var(--dark-2);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 5;
+}
+
+.podium-arrow:hover {
+  background: var(--gold);
+  color: var(--dark);
+  border-color: var(--gold);
+  transform: scale(1.08);
+}
+
+/* Dots indicadores */
+.podium-dots {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 32px;
+  margin-top: 36px;
 }
 
-.t-dot {
+.podium-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: var(--text-dim);
-  cursor: pointer;
-  transition: background 0.3s;
   border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  padding: 0;
 }
 
-.t-dot.active { background: var(--gold); }
+.podium-dot.active {
+  background: var(--gold);
+  transform: scale(1.4);
+}
 
 /* ============================================================
    PREÇOS (#pricing)
