@@ -584,11 +584,11 @@ section { padding: 120px 0; }
   font-weight: 400;
 }
 
-.pillars-grid {
+.pillars-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 48px;
 }
 
 .pillar-card {
@@ -1214,25 +1214,44 @@ section { padding: 120px 0; }
 .pricing-price-block { margin-bottom: 40px; }
 
 .pricing-from {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-dim);
-  letter-spacing: 0.1em;
-  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
 }
 
-.pricing-installments {
+.pricing-from s {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* Preço principal grande */
+.pricing-main-price {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 3.5rem;
-  color: var(--white);
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.pricing-value {
+  font-size: 5.5rem;
+  font-weight: 600;
+  color: var(--gold);
   line-height: 1;
 }
 
-.pricing-installments span {
-  font-size: 1.2rem;
-  vertical-align: top;
-  margin-top: 12px;
-  display: inline-block;
-  color: var(--gold);
+.pricing-main-price > :not(.pricing-value) {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.pricing-cents {
+  font-size: 2rem;
+  color: var(--white);
+  align-self: flex-end;
+  margin-bottom: 8px;
 }
 
 .pricing-full {
@@ -1274,6 +1293,26 @@ section { padding: 120px 0; }
   flex-shrink: 0;
 }
 
+/* Item de garantia dentro da lista de features */
+.pricing-feature-guarantee {
+  color: var(--gold) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500;
+  border-top: 1px solid rgba(201, 169, 110, 0.15) !important;
+  margin-top: 8px;
+  padding-top: 14px !important;
+  gap: 10px !important;
+}
+
+.pricing-feature-guarantee::before {
+  display: none !important;
+}
+
+.pricing-feature-guarantee svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
 .pricing-btn {
   display: block;
   width: 100%;
@@ -1310,21 +1349,18 @@ section { padding: 120px 0; }
 .pricing-guarantee svg { color: var(--gold); opacity: 0.7; }
 
 .payment-icons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 20px;
-  flex-wrap: wrap;
+  margin-top: 24px;
+  text-align: center;
 }
 
-.payment-icon {
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 4px 10px;
-  border-radius: 2px;
+.payment-img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  opacity: 0.75;
+  display: block;
+  margin: 0 auto;
+  filter: grayscale(20%);
 }
 
 /* ============================================================
@@ -1577,9 +1613,8 @@ footer {
 
   .forwho-grid  { grid-template-columns: 1fr; gap: 2px; }
   .module-lessons { grid-template-columns: 1fr; padding-left: 36px; }
-  .pillars-grid { grid-template-columns: 1fr; }
+  .pillars-row  { grid-template-columns: repeat(2, 1fr); }
   .pricing-card { padding: 36px 28px; }
-  .guarantee-inner { padding: 40px 24px; }
   .portfolio-item { width: 260px; height: 340px; }
 
   /* ── CARROSSEL PÓDIO — MOBILE ── */
@@ -1614,4 +1649,9 @@ footer {
   /* Mid-CTA mobile */
   .mid-cta { padding: 48px 0; }
   .mid-cta-text { font-size: 1.3rem; }
+}
+
+@media (max-width: 560px) {
+  .pillars-row { grid-template-columns: 1fr; }
+  .pricing-value { font-size: 4rem; }
 }
