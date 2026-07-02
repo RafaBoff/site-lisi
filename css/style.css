@@ -357,39 +357,50 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
   opacity: 0;
   animation: fadeUp 0.8s ease 1.4s forwards;
   cursor: pointer;
   text-decoration: none;
 }
 
-.hero-scroll-text {
-  font-size: 0.55rem;
-  letter-spacing: 0.45em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-}
-
-.hero-scroll-arrow {
+/* Chevrons empilhados com brilho */
+.hero-scroll-chevrons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 0;
 }
 
-.hero-scroll-arrow svg {
+.hero-scroll-chevrons svg {
+  width: 28px;
+  height: 18px;
   color: var(--gold);
-  opacity: 0.7;
-  animation: scrollBounce 1.6s ease-in-out infinite;
+  display: block;
+  margin-top: -4px; /* sobrepõe levemente para dar efeito cascata */
 }
 
-.hero-scroll-arrow svg:nth-child(2) { animation-delay: 0.2s; opacity: 0.4; }
-.hero-scroll-arrow svg:nth-child(3) { animation-delay: 0.4s; opacity: 0.2; }
+.hero-scroll-chevrons svg:nth-child(1) {
+  opacity: 1;
+  animation: chevronGlow 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(201,169,110,0.9));
+}
 
-@keyframes scrollBounce {
-  0%, 100% { transform: translateY(0);   opacity: 0.7; }
-  50%       { transform: translateY(6px); opacity: 1;   }
+.hero-scroll-chevrons svg:nth-child(2) {
+  opacity: 0.6;
+  animation: chevronGlow 1.8s ease-in-out 0.2s infinite;
+  filter: drop-shadow(0 0 4px rgba(201,169,110,0.5));
+}
+
+.hero-scroll-chevrons svg:nth-child(3) {
+  opacity: 0.25;
+  animation: chevronGlow 1.8s ease-in-out 0.4s infinite;
+  filter: drop-shadow(0 0 2px rgba(201,169,110,0.3));
+}
+
+@keyframes chevronGlow {
+  0%   { transform: translateY(0);   }
+  50%  { transform: translateY(7px); }
+  100% { transform: translateY(0);   }
 }
 
 /* ============================================================
@@ -1211,13 +1222,19 @@ section { padding: 120px 0; }
   margin-bottom: 8px;
 }
 
-.pricing-price-block { margin-bottom: 40px; }
+.pricing-price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  margin-bottom: 40px;
+}
 
 .pricing-from {
   font-size: 0.8rem;
   color: var(--text-dim);
   letter-spacing: 0.05em;
-  margin-bottom: 8px;
 }
 
 .pricing-from s {
