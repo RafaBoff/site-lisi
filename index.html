@@ -28,6 +28,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
@@ -81,27 +84,37 @@
   <a href="#pricing">Inscrição</a>
 </nav>
 
-<!-- HERO -->
+<!-- ============================================================
+     1. HERO
+     ============================================================ -->
 <section id="hero" aria-label="Apresentação do curso">
   <div class="hero-bg"    aria-hidden="true"></div>
   <div class="hero-grain" aria-hidden="true"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Do Automático ao Manual</div>
-    <h1 class="hero-title">Fotografia<br><em>do Zero</em></h1>
-    <p class="hero-title-sub">por Lisi Viezzer</p>
-    <p class="hero-desc">
-      Em 5 aulas você domina a sua câmera, entende os fundamentos da fotografia e
-      começa a fotografar como se fosse um fotógrafo profissional.
-    </p>
-    <a href="#pricing" class="btn-primary hero-cta" id="hero-cta">Quero aprender fotografia</a>
-  </div>
-  <div class="hero-scroll" aria-label="Role a página para ver mais">
-    <div class="hero-scroll-chevrons" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+
+  <div class="hero-layout">
+
+    <!-- Coluna Esquerda: Texto + CTA -->
+    <div class="hero-content">
+      <span class="hero-course-name">Fotografia do Zero</span>
+      <h1 class="hero-title">Aprenda a fotografar<br><em>do jeito certo.</em></h1>
+      <p class="hero-desc">
+        Em 5 aulas você domina a sua câmera, entende os fundamentos da fotografia e
+        começa a fotografar com confiança — de forma simples e sem complicação.
+      </p>
+      <a href="#pricing" class="btn-primary hero-cta" id="hero-cta">Quero aprender fotografia</a>
+      <p class="hero-author">por <strong>Lisi Viezzer</strong> &mdash; +12 anos de experiência</p>
     </div>
+
+    <!-- Coluna Direita: Foto da especialista -->
+    <div class="hero-photo" aria-hidden="true">
+      <div class="hero-photo-frame">
+        <img src="images/Lisi_mentora.webp" alt="Lisi Viezzer, fotógrafa e instrutora do curso" width="520" height="680">
+      </div>
+      <div class="hero-photo-glow" aria-hidden="true"></div>
+    </div>
+
   </div>
+
 </section>
 
 <!-- TICKER -->
@@ -150,7 +163,9 @@
   </div>
 </section>
 
-<!-- O CURSO -->
+<!-- ============================================================
+     2. O QUE VOCÊ VAI APRENDER (O Curso + Para Quem)
+     ============================================================ -->
 <section id="what" aria-label="Sobre o curso">
   <div class="container">
     <div class="what-grid">
@@ -248,7 +263,9 @@
   </div>
 </section>
 
-<!-- CURRÍCULO -->
+<!-- ============================================================
+     3. MÓDULOS / CONTEÚDO DO CURSO
+     ============================================================ -->
 <section id="curriculum" aria-label="Conteúdo do curso">
   <div class="container">
     <div class="curriculum-header reveal">
@@ -344,17 +361,9 @@
   </div>
 </section>
 
-<!-- CTA PÓS-CONTEÚDO -->
-<div class="mid-cta" aria-label="Chamada para inscrição">
-  <div class="container">
-    <div class="mid-cta-inner reveal">
-      <p class="mid-cta-text">Bora aprender a fotografar de verdade?</p>
-      <a href="#pricing" class="btn-primary" id="curriculum-cta">Quero começar agora</a>
-    </div>
-  </div>
-</div>
-
-<!-- PORTFÓLIO -->
+<!-- ============================================================
+     4. FOTOS DO CURSO (Backstage / Portfólio)
+     ============================================================ -->
 <section id="portfolio" aria-label="Portfólio de trabalhos">
   <div class="container">
     <div class="portfolio-header reveal">
@@ -380,7 +389,9 @@
   </div>
 </section>
 
-<!-- SOBRE -->
+<!-- ============================================================
+     5. SOBRE A LISI
+     ============================================================ -->
 <section id="about" aria-label="Sobre Lisi Viezzer">
   <div class="container">
     <div class="about-grid">
@@ -416,7 +427,9 @@
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
+<!-- ============================================================
+     6. DEPOIMENTOS
+     ============================================================ -->
 <section id="testimonials" aria-label="Depoimentos de alunos">
   <div class="container">
     <div class="testimonials-header reveal">
@@ -478,7 +491,9 @@
   </div>
 </section>
 
-<!-- PREÇOS -->
+<!-- ============================================================
+     7. OFERTA / CHECKOUT
+     ============================================================ -->
 <section id="pricing" aria-label="Plano e preço do curso">
   <div class="container">
     <div class="pricing-header reveal">
@@ -543,9 +558,9 @@
   </div>
 </section>
 
-
-
-<!-- FAQ -->
+<!-- ============================================================
+     8. FAQ
+     ============================================================ -->
 <section id="faq" aria-label="Perguntas frequentes">
   <div class="container">
     <div class="faq-header reveal">
@@ -628,6 +643,18 @@
     </div>
   </div>
 </section>
+
+<!-- ============================================================
+     9. CTA FINAL
+     ============================================================ -->
+<div class="mid-cta" id="cta-final" aria-label="Chamada final para inscrição">
+  <div class="container">
+    <div class="mid-cta-inner reveal">
+      <p class="mid-cta-text">Bora aprender a fotografar de verdade?</p>
+      <a href="#pricing" class="btn-primary" id="final-cta">Quero começar agora</a>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
