@@ -538,11 +538,11 @@ section { padding: 120px 0; }
 /* ── Grid de 6 thumbs ── */
 .course-thumb-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 8px;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 2 / 3;
 }
 
 .course-thumb {
@@ -1010,12 +1010,11 @@ section { padding: 120px 0; }
   display: grid;
   grid-template-columns: 5fr 7fr;
   gap: 80px;
-  align-items: start;
+  align-items: center;
 }
 
 .about-img-stack {
   position: relative;
-  padding-bottom: 60px;
 }
 
 .about-img-main {
@@ -1023,6 +1022,7 @@ section { padding: 120px 0; }
   aspect-ratio: 2/3;
   background: var(--dark-3);
   border: 1px solid rgba(201, 169, 110, 0.1);
+  border-radius: 12px;
   position: relative;
   overflow: hidden;
 }
@@ -1297,7 +1297,7 @@ section { padding: 120px 0; }
   background: var(--dark);
   border: 1px solid rgba(201, 169, 110, 0.2);
   padding: 60px;
-  border-radius: 4px;
+  border-radius: 16px;
   position: relative;
   overflow: hidden;
 }
