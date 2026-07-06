@@ -1753,11 +1753,19 @@ footer {
   .portfolio-item { width: 260px; height: 340px; }
 
   /* ── HERO MOBILE ── */
+  #hero {
+    height: auto;
+    min-height: 100svh;
+    padding-top: 64px;
+    padding-bottom: 40px;
+  }
+
   .hero-layout {
     grid-template-columns: 1fr;
-    padding: 40px 24px 100px;
-    gap: 40px;
+    padding: 24px 20px 48px;
+    gap: 24px;
     text-align: center;
+    height: auto;
   }
 
   .hero-content {
@@ -1765,10 +1773,30 @@ footer {
     order: 2;
   }
 
+  .hero-course-name { margin-bottom: 12px; }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 12px;
+  }
+
   .hero-desc {
+    font-size: 0.93rem;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 24px;
+    max-width: 100%;
   }
+
+  .hero-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 16px 20px;
+  }
+
+  .hero-author { margin-top: 12px; }
 
   .hero-photo {
     order: 1;
@@ -1776,45 +1804,54 @@ footer {
   }
 
   .hero-photo-frame {
-    max-width: 280px;
+    max-width: 200px;
     margin: 0 auto;
   }
 
+  /* ── TICKER MOBILE ── */
+  .ticker-wrap { overflow: hidden; }
+  .ticker-item { font-size: 0.82rem; padding: 0 20px; }
 
-  .podium-carousel {
-    gap: 8px;
-  }
+  /* ── STATS MOBILE ── */
+  .stat-item { padding: 28px 12px; }
+  .stat-number { font-size: 2.6rem; }
 
-  /* No mobile, esconde os cards laterais — só o central visível */
-  .podium-card.is-side {
-    display: none;
-  }
+  /* ── O CURSO MOBILE ── */
+  .course-thumb-grid { max-width: 320px; margin: 0 auto; }
+  .what-cta-wrap { margin-top: 36px; padding: 36px 0 8px; }
 
-  /* Card ativo ocupa toda a largura disponível */
-  .podium-card.is-active {
-    flex: 1;
-    max-width: 100%;
-    transform: none; /* sem elevação no mobile */
-  }
+  /* ── PARA QUEM MOBILE ── */
+  .forwho-card { padding: 36px 24px; }
 
-  .podium-stage {
-    min-height: auto;
-    gap: 0;
-  }
+  /* ── PORTFÓLIO MOBILE ── */
+  .portfolio-item { width: 220px; height: 290px; }
 
-  /* Setas menores no mobile */
-  .podium-arrow {
-    width: 36px;
-    height: 36px;
-    flex-shrink: 0;
-  }
+  /* ── SOBRE MOBILE ── */
+  .about-img-stack { display: flex; justify-content: center; }
+  .about-img-main  { max-width: 260px; margin: 0 auto; aspect-ratio: 3/4; }
+  .about-text      { padding-top: 0; }
+  .about-quote     { font-size: 1.25rem; }
 
-  /* Mid-CTA mobile */
+  /* ── DEPOIMENTOS MOBILE ── */
+  .podium-carousel { gap: 8px; }
+  .podium-card.is-side { display: none; }
+  .podium-card.is-active { flex: 1; max-width: 100%; transform: none; }
+  .podium-stage { min-height: auto; gap: 0; }
+  .podium-arrow { width: 36px; height: 36px; flex-shrink: 0; }
+
+  /* ── CTA FINAL MOBILE ── */
   .mid-cta { padding: 48px 0; }
-  .mid-cta-text { font-size: 1.3rem; }
+  .mid-cta-text { font-size: 1.25rem; padding: 0 20px; }
+  .mid-cta-inner .btn-primary {
+    display: block;
+    width: calc(100% - 48px);
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 560px) {
+  .hero-photo-frame { max-width: 160px; }
+  .hero-title { font-size: clamp(1.9rem, 9vw, 2.6rem); }
   .pillars-row { grid-template-columns: 1fr; }
-  .pricing-value { font-size: 4rem; }
 }
