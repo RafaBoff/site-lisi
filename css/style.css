@@ -548,12 +548,9 @@ section { padding: 120px 0; }
   overflow: hidden;
   border: 1px solid rgba(201, 169, 110, 0.10);
   border-radius: 4px;
-  cursor: pointer;
   background: var(--dark-3);
-  padding: 0;
   width: 100%;
   aspect-ratio: 4 / 5;
-  transition: border-color 0.3s;
 }
 
 .course-thumb:hover { border-color: rgba(201, 169, 110, 0.4); }
@@ -572,25 +569,7 @@ section { padding: 120px 0; }
   filter: grayscale(0%);
 }
 
-.course-thumb-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 10, 10, 0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
 
-.course-thumb:hover .course-thumb-overlay { opacity: 1; }
-
-.course-thumb-overlay svg {
-  width: 28px;
-  height: 28px;
-  color: var(--gold);
-  filter: drop-shadow(0 0 6px rgba(201,169,110,0.6));
-}
 
 /* ── CTA abaixo dos pilares ── */
 .what-cta-wrap {
@@ -613,75 +592,7 @@ section { padding: 120px 0; }
   line-height: 1.4;
 }
 
-/* ── LIGHTBOX ── */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 300;
-  background: rgba(5, 5, 5, 0.94);
-  backdrop-filter: blur(12px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  pointer-events: none;
-}
 
-.lightbox:not([hidden]) {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.lightbox[hidden] { display: flex !important; opacity: 0; pointer-events: none; }
-
-.lightbox-inner {
-  position: relative;
-  max-width: 90vw;
-  max-height: 88vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.lightbox-inner img {
-  max-width: 100%;
-  max-height: 80vh;
-  object-fit: contain;
-  border: 1px solid rgba(201, 169, 110, 0.15);
-  border-radius: 4px;
-  display: block;
-}
-
-.lightbox-caption {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-}
-
-.lightbox-close {
-  position: fixed;
-  top: 24px;
-  right: 24px;
-  width: 44px;
-  height: 44px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(201, 169, 110, 0.2);
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  transition: background 0.3s, transform 0.3s;
-  z-index: 310;
-}
-
-.lightbox-close svg { width: 20px; height: 20px; }
-.lightbox-close:hover { background: rgba(201,169,110,0.15); transform: rotate(90deg); }
 
 .what-text p {
   color: var(--text-muted);
