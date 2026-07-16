@@ -273,7 +273,7 @@ body {
 
 .hero-desc {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-size: clamp(2.3rem, 4.8vw, 3.2rem);
   font-weight: 300;
   line-height: 1.2;
   color: var(--white);
@@ -292,7 +292,7 @@ body {
 }
 
 .hero-subdesc {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--text-muted);
   line-height: 1.7;
   max-width: 440px;
