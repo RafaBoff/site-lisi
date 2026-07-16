@@ -291,6 +291,9 @@ body {
   display: inline;
 }
 
+/* Quebra de linha controlada — oculta no desktop */
+.hero-br { display: none; }
+
 .hero-subdesc {
   font-size: 1.2rem;
   color: var(--text-muted);
@@ -1677,12 +1680,21 @@ footer {
   }
 
   .hero-desc {
-    font-size: 0.93rem;
+    font-size: 1.55rem;
+    line-height: 1.3;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     max-width: 100%;
   }
+
+  .hero-subdesc {
+    font-size: 1.0rem;
+    max-width: 100%;
+  }
+
+  /* Ativa a quebra de linha antes de "e começa" */
+  .hero-br { display: block; }
 
   .hero-cta {
     display: block;
