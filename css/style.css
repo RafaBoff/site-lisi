@@ -272,12 +272,33 @@ body {
 }
 
 .hero-desc {
-  font-size: 0.97rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--white);
+  max-width: 520px;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.5s forwards;
+}
+
+.hero-desc-em {
+  font-style: italic;
+  color: var(--gold);
+  display: block;
+  font-weight: 300;
+}
+
+.hero-subdesc {
+  font-size: 0.92rem;
   color: var(--text-muted);
-  line-height: 1.75;
-  max-width: 460px;
+  line-height: 1.7;
+  max-width: 400px;
   margin-bottom: 32px;
   font-weight: 300;
+  letter-spacing: 0.02em;
   opacity: 0;
   animation: fadeUp 0.8s ease 0.65s forwards;
 }
