@@ -1191,6 +1191,51 @@ section { padding: 120px 0; }
   transform: scale(1.4);
 }
 
+/* ── Cards de imagem (depoimentos em print) ── */
+.podium-card--img {
+  padding: 12px;
+  background: var(--dark-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+}
+
+.podium-img-wrap {
+  width: 100%;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.podium-img-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 2px;
+  transition: transform 0.4s ease;
+}
+
+.podium-card--img.is-active .podium-img-wrap img {
+  transform: scale(1.01);
+}
+
+/* Em mobile, altura menor para caber melhor */
+@media (max-width: 600px) {
+  .podium-img-wrap {
+    height: 280px;
+  }
+  .podium-card--img {
+    min-height: 300px;
+  }
+}
+
 /* ============================================================
    PREÇOS (#pricing)
    ============================================================ */
