@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://curso.lisiviezzer.com.br/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://curso.lisiviezzer.com.br/images/og-image.webp</image:loc>
+      <image:title>Curso Fotografia do Zero com Lisi Viezzer</image:title>
+      <image:caption>Curso online de fotografia do zero com Lisi Viezzer — aprenda ISO, abertura, velocidade, composição e Lightroom</image:caption>
+    </image:image>
+  </url>
+</urlset>

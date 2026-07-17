@@ -237,50 +237,7 @@
     startAuto();
   })();
 
-  /* ─── LIGHTBOX ─── */
-  (function () {
-    const lightbox     = document.getElementById('lightbox');
-    const lbImg        = document.getElementById('lightbox-img');
-    const lbCaption    = document.getElementById('lightbox-caption');
-    const lbClose      = document.getElementById('lightbox-close');
 
-    if (!lightbox || !lbImg) return;
-
-    function openLightbox(src, caption) {
-      lbImg.src        = src;
-      lbImg.alt        = caption || '';
-      lbCaption.textContent = caption || '';
-      lightbox.hidden  = false;
-      document.body.style.overflow = 'hidden';
-      lbClose.focus();
-    }
-
-    function closeLightbox() {
-      lightbox.hidden  = true;
-      lbImg.src        = '';
-      document.body.style.overflow = '';
-    }
-
-    // Abrir ao clicar nas thumbs
-    document.querySelectorAll('.course-thumb').forEach(btn => {
-      btn.addEventListener('click', () => {
-        openLightbox(btn.dataset.img, btn.dataset.caption);
-      });
-    });
-
-    // Fechar pelo botão
-    if (lbClose) lbClose.addEventListener('click', closeLightbox);
-
-    // Fechar clicando no fundo
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-    // Fechar com Escape
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
-    });
-  })();
 
   /* ─── SMOOTH SCROLL ─── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
