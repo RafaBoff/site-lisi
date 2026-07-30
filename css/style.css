@@ -1017,6 +1017,20 @@ section { padding: 80px 0; }
   border-radius: 2px;
 }
 
+.about-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  text-decoration: none;
+  margin-bottom: 20px;
+  transition: color 0.3s;
+}
+
+.about-instagram:hover { color: var(--gold); }
+
 /* ============================================================
    DEPOIMENTOS (#testimonials) — CARoussel PÓDIO
    ============================================================ */
@@ -1631,7 +1645,7 @@ footer {
 .reveal-delay-4 { transition-delay: 0.4s; }
 
 /* ============================================================
-   RESPONSIVO
+   RESPONSIVO — max-width: 900px (mobile geral)
    ============================================================ */
 @media (max-width: 900px) {
   #nav { padding: 16px 24px; }
@@ -1763,6 +1777,54 @@ footer {
     text-align: center;
     margin: 0 auto;
   }
+}
+
+/* ============================================================
+   TABLET: layout side-by-side preservado (561px – 900px)
+   ============================================================ */
+@media (min-width: 561px) and (max-width: 900px) {
+
+  /* ── HERO ── */
+  .hero-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    text-align: left;
+    padding: 24px 24px 48px;
+    height: auto;
+  }
+
+  .hero-content { text-align: left; order: 1; }
+  .hero-photo   { order: 2; justify-content: flex-end; }
+
+  .hero-photo-frame {
+    max-width: 260px;
+    margin: 0 0 0 auto;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    padding: 16px 36px;
+  }
+
+  .hero-subdesc { max-width: 100%; }
+
+  /* ── O CURSO ── */
+  .what-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  /* ── SOBRE ── */
+  .about-grid {
+    grid-template-columns: 5fr 7fr;
+    gap: 40px;
+  }
+
+  .about-img-stack { display: block; }
+  .about-img-main  { max-width: 100%; aspect-ratio: 2/3; }
+  .about-text      { padding-top: 20px; }
 }
 
 @media (max-width: 560px) {
