@@ -42,6 +42,7 @@
     hamburger.classList.add('open');
     mobileMenu.classList.add('open');
     hamburger.setAttribute('aria-expanded', 'true');
+    hamburger.setAttribute('aria-label', 'Fechar menu');
     document.body.style.overflow = 'hidden';
   }
 
@@ -50,6 +51,7 @@
     hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-label', 'Abrir menu');
     document.body.style.overflow = '';
   }
 

@@ -147,7 +147,7 @@ body {
 
 /* ─── MOBILE MENU ─── */
 .nav-mobile {
-  display: none;
+  display: flex;           /* sempre flex — visibilidade via opacity/visibility */
   position: fixed;
   inset: 0;
   background: rgba(10, 10, 10, 0.98);
@@ -158,12 +158,14 @@ body {
   justify-content: center;
   gap: 40px;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
 .nav-mobile.open {
   opacity: 1;
+  visibility: visible;
   pointer-events: all;
 }
 
